@@ -1,0 +1,6 @@
+print("Enter the value of N")
+N=int(input())
+print("Enter the values of L,R")
+L,R=map(int,input().split())
+if L<=N<=R:
+	print("yes")
