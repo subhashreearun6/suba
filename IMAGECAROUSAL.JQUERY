@@ -1,0 +1,87 @@
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery IMAGE</title>
+    <!-- In order to use jQuery, you need to load it with a script tag -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="imagecar.css" type="text/css">
+</head>
+
+<body>
+    <H1>JQUERY IMAGE CAROUSAL</H1>
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="koala.jpg" style="width:100%">
+            <div class="text">koala</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="chrysanthemum.jpg" style="width:100%">
+            <div class="text">Chrysanthemum</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="Desert.jpg" style="width:100%">
+            <div class="text">Desert</div>
+        </div>
+
+        <a class="prev" id="prev">&#10094;</a>
+        <a class="next" id="next">&#10095;</a>
+
+    </div>
+    <br>
+    <div style="text-align:center">
+            <span class="dot" id="b1"></span>
+            <span class="dot" id="b2"></span>
+            <span class="dot" id="b3"></span>
+        </div>
+   
+    <script>
+        $(document).ready(function(){
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            
+            $("#prev").click(function () {
+                var n=-1;
+              showSlides(slideIndex += n);
+            });
+            $("#next").click(function () {
+                var n=1;
+              showSlides(slideIndex += n);
+            });
+            $("#b1").click(function () {
+                var n=1;
+              showSlides(slideIndex = n);
+            });
+            $("#b2").click(function () {
+                var n=2;
+              showSlides(slideIndex = n);
+            });
+            $("#b3").click(function () {
+                var n=3;
+              showSlides(slideIndex = n);
+            });
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("dot");
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+            }
+        });
+            </script>
+            
+</body>
