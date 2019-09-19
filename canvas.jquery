@@ -1,0 +1,63 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+        <canvas id="myCanvas" width="500%" height="500%"
+        style="border:1px solid #c3c3c3;"  style="background-color:white">
+        </canvas>
+    <input type="button" id="id1" value="drawtriangle" onclick="drawtriangle() ">
+<input type="button" id="id2" value="rotatetriangle" onclick="rotate()">
+<input type="button" id="id3" value="clear canvas" onclick="clear1()">
+
+
+<script>
+function drawtriangle()
+{   
+var canvas = document.getElementById("myCanvas");
+var context = canvas.getContext("2d");
+context.beginPath();
+context.moveTo(60, 240);
+context.lineTo(240,240);
+context.lineTo(150, 60);
+context.closePath();
+context.lineWidth = 10;
+context.strokeStyle = '#666666';
+context.stroke();
+context.fillStyle = "#FFCC00";
+context.fill();
+
+}
+function rotate()
+{
+   
+var canvas = document.getElementById("myCanvas");
+var context = canvas.getContext("2d");
+context.beginPath();
+context.moveTo(60, 240);
+context.lineTo(240,240);
+context.lineTo(150, 60);
+context.closePath();
+context.lineWidth = 10;
+context.strokeStyle = '#666666';
+context.stroke();
+context.fillStyle = "#FFCC00";
+context.fill();
+context.rotate(20 * Math.PI / 180);
+context.save();
+context.restore();
+
+}
+function clear1()
+{ 
+var canvas = document.getElementById("myCanvas");
+var context = canvas.getContext("2d");
+context.setTransform(1,0,0,1,0,0);
+context.clearRect(0 , 0 , canvas.width , canvas.height);
+
+}
+</script>
+</body>
+</html> 
