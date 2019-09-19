@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<style>
+      div
+      {
+          height: 70px;
+          width: 70px;
+          border: solid black;
+        float : left;
+        
+      }
+        #button1, #button2, #button3
+        {
+margin-top:100px;
+
+        }
+      
+</style>
+<script type="text/javascript">
+
+$(document).ready(function(){
+            $("#button1").click(function(){
+                $("div").css("border-radius","25px");
+            });
+        });
+$(document).ready(function(){
+            $("#button2").click(function(){
+                $("body").append("<div></div>");
+            });
+        });
+        $(document).ready(function(){
+            $("#button3").click(function(){
+                $("div").css("background-color","red");
+                
+            });
+        });        
+
+</script>
+  
+<body>
+      <div id="box1" class="boxoutlined"></div>
+      <div id="box1" class="boxoutlined"></div>
+      <div id="box1" class="boxoutlined"></div>
+
+      <input type=button id="button1" value="toggle round">
+      <input type=button id="button2" value="toggle append">
+      <input type=button id="button3" value="toggle color change">
+
+</body>
+</html>
