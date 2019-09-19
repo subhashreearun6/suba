@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Basics</title>
+    <!-- In order to use jQuery, you need to load it with a script tag -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#button1").click(function(){
+                $("ul").append("<li>"+$("input:text").val()+"</li>");
+            });
+        });
+        </script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("#button2").click(function(){
+                $("ul").prepend("<li>"+$("input:text").val()+"</li>");
+
+            });
+        });
+ </script>
+ <script type="text/javascript">
+ $(document).ready(function(){
+    $("#id1").click(function(){
+        $("ul").remove("<li>"-$("input:text").val()-"</li>");
+
+    });
+});
+</script>
+ </head>
+ <body>
+ <input type="text" name=" ">
+ <input type="button"  id="button1" value="add">
+ <input type="button"  id="button2" value="addprepend">
+ <input type="button" id="id1" value="remove">
+ <ul></ul>
+
+</body>
+</html>
+
